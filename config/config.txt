@@ -1,0 +1,24 @@
+{
+  "api": {
+    "baseUrl": "https://api.openai.com/v1/chat/completions",
+    "timeout": 5000
+  },
+  "features": {
+    "enableFeatureX": false,
+    "enableFeatureY": true
+  },
+  "validation": {
+    "schemaPath": "schemas/serverConfigSchema.json",
+    "validateServers": true
+  },
+  "logging": {
+    "level": "info",
+    "format": "text"
+  },
+  "serverConfigurations": {
+    "default": {
+      "id": "defaultServer",
+      "url": "${SCHEMA_URL}" // This will be replaced dynamically from .env
+    }
+  }
+}

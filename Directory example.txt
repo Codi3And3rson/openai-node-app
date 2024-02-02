@@ -1,0 +1,31 @@
+/test1122-app/
+│
+├── backend/                 # Backend Python scripts
+│   ├── __init__.py
+│   ├── appendices.py        # Assuming custom logic for the app
+│   ├── listener.py          # For handling incoming network connections
+│   ├── main.py              # Entry point for the backend
+│   ├── packets.py           # Assuming custom packet processing
+│   └── run_telemetry.py     # For telemetry data processing
+│
+├── frontend/                # Frontend JavaScript code
+│   ├── apiServices.js       # API interaction services
+│   ├── cache.js             # Frontend caching logic
+│   ├── gptIntegration.js    # GPT service integration
+│   ├── index.js             # Main frontend application script
+│   ├── telemetryParsers.js  # Telemetry data parsing
+│   └── utils.js             # Utility functions
+│
+├── config/                  # Configuration files
+│   ├── config.txt           # General app configuration (Consider converting to .json or .env)
+│   └── .env                 # Environment variables (Not in zip but recommended for sensitive info)
+│
+├── schemas/                 # JSON schemas for validation
+│   └── messageSchema.json   # Example schema (If applicable based on your app's needs)
+│
+├── public/                  # Public assets (HTML/CSS/images)
+│   └── index.html           # Main HTML file (Assuming a web app; not present in zip but recommended)
+│
+├── package.json             # NPM package configuration
+├── package-lock.json        # Locked versions of NPM packages
+└── requirements.txt         # Python package requirements

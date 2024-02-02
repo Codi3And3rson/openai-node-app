@@ -1,0 +1,38 @@
+Privacy Policy for Custom GPT Model - Formula 1 Data Analysis
+Effective Date: [02/02/2024]
+
+Last Updated: [02/02/2024]
+
+Introduction
+Welcome to our Custom GPT Model for Formula 1 Data Analysis. We are committed to protecting the privacy and security of our users' information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our model. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the model.
+
+Information Collection
+When you interact with our model, we may collect the following information:
+
+Telemetry Data: Specific data related to Formula 1 races, including lap times, tire conditions, fuel usage, and car performance.
+User Preferences: Information about your preferences and interests as they relate to Formula 1 and data analysis.
+API Keys and Configurations: Details provided by you for API interaction compliance, including keys and configuration settings.
+Use of Information
+The information we collect is used in the following ways:
+
+To provide personalized data analysis and insights.
+To enhance the model's accuracy and user experience.
+For the development of new features and improvements.
+To ensure compliance with API interaction protocols.
+Data Sharing and Disclosure
+We do not sell, rent, or share your personal information with third parties, except as described in this policy. We may share information with:
+
+Service providers who perform services for us.
+In response to a request for information if we believe disclosure is in accordance with, or required by, any applicable law, regulation, or legal process.
+Data Security
+We implement a variety of security measures designed to maintain the safety of your personal information when you use our model. This includes encryption of data in transit and at rest, as well as regular updates to security practices.
+
+Your Data Rights
+You have the right to:
+
+Access the personal information we hold about you.
+Request the correction of incorrect or incomplete information.
+Request the deletion of your personal information.
+Withdraw consent for data processing.
+Changes to This Privacy Policy
+We may update this privacy policy from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible.

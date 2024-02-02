@@ -1,0 +1,206 @@
+openapi: 3.0.3
+info:
+  title: Node Application API
+  description: >
+    This API provides endpoints for managing resources, including submitting and retrieving telemetry data,
+    and includes descriptive documentation for real-time communication features.
+    Note: Real-time interactions over WebSockets and UDP are described conceptually and should be implemented
+    separately.
+  version: 1.0.0
+servers:
+  - url: https://chat.openai.com/g/g-K7UzphDN3-f1-2023-udp-telemetry-analysis-racing-coach
+    description: Development server
+
+paths:
+  /track-conditions/{trackId}:
+    get:
+      operationId: getTrackConditions
+      summary: Get track conditions
+      parameters:
+        - in: path
+          name: trackId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackConditions'
+
+  /weather/{location}:
+    get:
+      operationId: getWeatherConditions
+      summary: Get current weather conditions for a location
+      parameters:
+        - in: path
+          name: location
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherConditions'
+
+  /car-performance/{carId}:
+    get:
+      operationId: getCarPerformance
+      summary: Get performance metrics for a specific car
+      parameters:
+        - in: path
+          name: carId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarPerformance'
+
+  /driver-behavior/{driverId}:
+    get:
+      operationId: getDriverBehavior
+      summary: Get behavior analytics for a specific driver
+      parameters:
+        - in: path
+          name: driverId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DriverBehavior'
+
+  /telemetry:
+    post:
+      operationId: submitTelemetryData
+      summary: Submits telemetry data for processing.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TelemetryData'
+      responses:
+        '200':
+          description: Successfully processed telemetry data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                required:
+                  - message
+        '400':
+          description: Bad Request - Invalid telemetry data provided.
+          $ref: '#/components/responses/BadRequestError'
+        '500':
+          description: Internal Server Error
+          $ref: '#/components/responses/InternalServerError'
+
+  /telemetry/{id}:
+    get:
+      operationId: retrieveTelemetryData
+      summary: Retrieves processed telemetry data by ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The ID of the telemetry data to retrieve.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved telemetry data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TelemetryData'
+        '404':
+          description: Not Found - The specified telemetry data ID does not exist.
+
+components:
+  schemas:
+    TrackConditions:
+      type: object
+      properties:
+        temperature:
+          type: number
+          format: float
+        humidity:
+          type: number
+          format: float
+        trackSurface:
+          type: string
+        windSpeed:
+          type: number
+          format: float
+    WeatherConditions:
+      type: object
+      properties:
+        condition:
+          type: string
+        temperature:
+          type: number
+        humidity:
+          type: number
+    CarPerformance:
+      type: object
+      properties:
+        topSpeed:
+          type: number
+        acceleration:
+          type: number
+        handling:
+          type: number
+    DriverBehavior:
+      type: object
+      properties:
+        aggressionLevel:
+          type: number
+        consistency:
+          type: number
+    TelemetryData:
+      type: object
+      properties:
+        speed:
+          type: number
+        tirePressure:
+          type: number
+        brakeTemperature:
+          type: number
+        lapTime:
+          type: number
+      required:
+        - speed
+        - tirePressure
+        - brakeTemperature
+        - lapTime
+  responses:
+    BadRequestError:
+      description: The request could not be understood by the server due to malformed syntax.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalServerError:
+      description: The server encountered an unexpected condition that prevented it from fulfilling the request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
