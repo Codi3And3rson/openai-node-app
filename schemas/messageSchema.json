@@ -17,37 +17,7 @@
             "format": "uri",
             "description": "GitHub URL to the server's configuration or additional details",
             "examples": [
-              "
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Application Configuration Schema",
-  "type": "object",
-  "properties": {
-    "servers": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique identifier for the server"
-          },
-          "url": {
-            "type": "string",
-            "format": "uri",
-            "description": "GitHub URL to the server's configuration or additional details",
-            "examples": [
-              "https://raw.githubusercontent.com/Codi3And3rson/openai-node-app/master/messageSchema.json"
-            ]
-          }
-        },
-        "required": ["id", "url"]
-      },
-      "description": "List of servers with configurations stored on GitHub"
-    }
-  },
-  "required": ["servers"]
-}
-"
+              "https://raw.githubusercontent.com/Codi3And3rson/openai-node-app/master/schemas/messageSchema.json"
             ]
           }
         },
