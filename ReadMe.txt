@@ -1,7 +1,7 @@
-README.md for Your Application
+README.md 
 markdown
 Copy code
-# Test1122 App
+# Test1 App
 
 This project is a full-stack application showcasing integration with OpenAI's GPT, express-rate-limit for rate limiting, AJV for JSON schema validation, and various other modern web development practices. It serves as an example of a Node.js and Python-based application structure, optimized for performance, security, and scalability.
 
