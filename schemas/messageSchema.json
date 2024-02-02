@@ -17,7 +17,7 @@
             "format": "uri",
             "description": "GitHub URL to the server's configuration or additional details",
             "examples": [
-              "{
+              "
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Application Configuration Schema",
   "type": "object",
