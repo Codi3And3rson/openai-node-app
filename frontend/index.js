@@ -33,7 +33,7 @@ app.use(limiter);
 // Improved error handling and schema caching
 async function setupApplication() {
     try {
-        await loadAndCompileSchema(process.env.SCHEMA_URL || 'https://raw.githubusercontent.com/Codi3And3rson/openai-node-app/master/messageSchema.json', ajv);
+        await loadAndCompileSchema(process.env.SCHEMA_URL || 'https://raw.githubusercontent.com/Codi3And3rson/openai-node-app/master/schemas/messageSchema.json', ajv);
         console.log('Application setup completed.');
     } catch (error) {
         console.error('Application setup failed:', error);
